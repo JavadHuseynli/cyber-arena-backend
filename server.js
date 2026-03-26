@@ -13,6 +13,7 @@ const leaderboardRoutes = require('./routes/leaderboard');
 const adminRoutes = require('./routes/admin');
 const cardRoutes = require('./routes/cards');
 const profileRoutes = require('./routes/profile');
+const cveLabRoutes = require('./routes/cvelabs');
 
 const app = express();
 const server = http.createServer(app);
@@ -67,6 +68,7 @@ app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/cards', cardRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/api/cve-labs', cveLabRoutes);
 
 // Increase JSON body limit for base64 avatar uploads
 app.use('/api/profile/avatar', express.json({ limit: '5mb' }));
